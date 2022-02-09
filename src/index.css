@@ -1,13 +1,69 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@font-face {
+  font-family: 'decterm';
+  src: url(./fonts/_decterm.ttf);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+*,h1,h2,h3,p,input{
+  padding: 0%;
+  margin: 0;
+  font-weight: 400;
+  font-style: normal;
+  font-family: 'decterm';
+}
+
+body {
+  padding: 0%;
+  margin: 0;
+  height: 100vh;
+  font-family: 'decterm', sans-serif;
+  background-color: black;
+}
+
+.header{
+  display: flex;
+  background-color: #006b22;
+  height: 57px;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.header-title{
+  height: 28px;
+  margin-bottom: 6px;
+}
+.input-search{
+  width: 488px;
+  height: 69px;
+  border-radius: 46px;
+  margin-top: 62px;
+  background-color: #006B22 ;
+}
+input[type=text]{
+  padding: 15px 42px;
+  /* margin: 10px 5px; */
+  box-sizing: border-box;
+  font-size: 24px;
+  line-height: 27.5px;
+  border: none;
+  
+}
+.input-search::placeholder{
+  color: black;
+  opacity: 35%;
+}
+.empty-search{
+  color: #006b22;
+  margin-top: 62px ;
+  border: 9px solid #006B22;
+  box-sizing: border-box;
+  display: inline-block;
+  padding: 10%;
+}
+.green{
+  color: #006B22;
+}
+.time{
+  padding-left: 8.12px;
+  padding-right: 8.12px;
 }
