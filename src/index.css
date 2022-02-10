@@ -14,9 +14,15 @@
 body {
   padding: 0%;
   margin: 0;
-  height: 100vh;
   font-family: 'decterm', sans-serif;
   background-color: black;
+}
+
+.flex-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .header{
@@ -66,4 +72,37 @@ input[type=text]{
 .time{
   padding-left: 8.12px;
   padding-right: 8.12px;
+}
+
+.after-search{
+  color: #006b22;
+  margin-top: 62px ;
+  border: 9px solid #006B22;
+  box-sizing: border-box;
+  display: inline-block;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 17.5px;
+  
+}
+
+.green-hr{
+  height: 1px;
+  background-color: #006b22;
+  border: none;
+}
+
+.story-container{
+  margin-top: 17.5px;
+}
+
+.story-container:hover{
+  cursor: pointer;
+}
+.container-info{
+  display: flex;
+}
+
+.posted{
+  margin-left: 3%;
 }

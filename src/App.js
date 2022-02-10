@@ -16,14 +16,16 @@ function App() {
   }
 console.log(fullQuery)
   return (
-    <div>
+    <>
       <Header />
-      <center><form className='search-bar' onSubmit={handleSubmit}>
+      <div className='flex-container'>
+      <form className='search-bar' onSubmit={handleSubmit}>
           <input type='text' className='input-search' placeholder='Search...' onChange={handleChange}/>
-        </form></center>
-        {!fullQuery && <center><h1 className='empty-search'>Search some news</h1></center>}
+        </form>
         {fullQuery && <HackerPosts/>}
-    </div>
+        {!fullQuery && <h1 className='empty-search'>Search some news</h1>}
+      </div>
+    </>
   );
 }
 

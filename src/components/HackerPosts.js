@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useState } from 'react/cjs/react.development';
 import { searchUrl } from '../services/apiLinks';
 import HackerPost from './HackerPost';
+
 function HackerPosts({fullQuery}) {
    
     const [dataFetched, setDataFetched] = useState([])
@@ -26,15 +27,18 @@ console.log(dataFetched)
   
 if(fetched){
     return(
-        dataFetched.hits.map((hit, i) => {
-            return(
-            <HackerPost key={i} hit={hit}/>
-            )
-        })       
-          
+        <div className='after-search'>
+            <h1 className='green'>HACKER NEWS SEARCH RESULTS</h1>
+            <hr className='green-hr' />
+            {dataFetched.hits.map((hit, i) => {
+                return(
+                        <HackerPost key={i} hit={hit}/>
+                      )
+                    })}       
+        </div>
     )}
     if(!fetched){
-        return <center><h1 className='empty-search'>Loading...</h1></center>
+        return <h1 className='empty-search'>Loading...</h1>
     }
 }
 
