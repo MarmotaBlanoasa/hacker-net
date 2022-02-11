@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Moment from 'react-moment';
-
-function HackerPost({hit}) {
-
+import Comments from './Comments';
+function HackerPost({hit, id}) {
+    const [showComments, setShowComments] = useState(false)
+    console.log(hit)
   return <div className='story-container'>
-                <h1 className='green'>{hit.story_title}</h1>
+                <div className='container-info'>
+                    <h1 className='green'>{hit.title}</h1>
+                    {showComments && <h1 className='green points'> Points: {hit.points}</h1>}
+                </div>
                 <div className='container-info'>
                     <h2 className='green'>By: {hit.author}</h2>
                     <h2 className='green posted'>
@@ -14,9 +18,10 @@ function HackerPost({hit}) {
                         </Moment>
                         ago
                     </h2>
-                
+                <button className='green show-comments' onClick={()=> {setShowComments(!showComments)}}>Show Comments</button>
                 </div>
-  </div>;
+                {showComments && <Comments id={id}/>}
+            </div>;
 }
 
 export default HackerPost;

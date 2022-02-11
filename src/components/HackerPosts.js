@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react/cjs/react.development';
 import { searchUrl } from '../services/apiLinks';
+
 import HackerPost from './HackerPost';
 
 function HackerPosts({fullQuery}) {
@@ -11,7 +12,7 @@ function HackerPosts({fullQuery}) {
     useEffect(()=>{
         const fetchQuery = async () => {
             try{
-                const response = await fetch(`${searchUrl}fullQuery`)
+                const response = await fetch(`${searchUrl}${fullQuery}`)
                 const data = await response.json()
                 setDataFetched(data)
                 setFetched(true)
@@ -22,20 +23,21 @@ function HackerPosts({fullQuery}) {
         }
         fetchQuery();
     },[fullQuery])
-
-console.log(dataFetched)
-  
+    console.log(dataFetched.hits)
 if(fetched){
     return(
+
         <div className='after-search'>
             <h1 className='green'>HACKER NEWS SEARCH RESULTS</h1>
             <hr className='green-hr' />
             {dataFetched.hits.map((hit, i) => {
                 return(
-                        <HackerPost key={i} hit={hit}/>
+                        <HackerPost key={i} hit={hit} title={hit.title} id={hit.objectID}/>
                       )
-                    })}       
+                    })}
+                      
         </div>
+
     )}
     if(!fetched){
         return <h1 className='empty-search'>Loading...</h1>

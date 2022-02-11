@@ -3,6 +3,7 @@ import Header from './components/Header';
 import { useState } from 'react/cjs/react.development';
 import HackerPosts from './components/HackerPosts'; 
 
+
 function App() {
   const [query, setQuery] = useState('')
   const [fullQuery, setFullQuery] = useState('')
@@ -14,7 +15,6 @@ function App() {
     const searchTerm = e.target.value
     setQuery(searchTerm)
   }
-console.log(fullQuery)
   return (
     <>
       <Header />
